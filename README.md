@@ -1,4 +1,6 @@
-# Lightning Trigger for Sony Cameras, using the ESP32-2432S024R
+# Lightning trigger for Sony cameras using the ESP32-2432S024R
+
+![Lightning Trigger user interface](images/triggerUI.jpg)
 
 ## Description
 
@@ -11,12 +13,14 @@ In "Manual" mode, you can enter the sensitivity manually.
 
 The 2432S024's light sensor is quite sensitive, and will max out with only a small amount of light, so you won't see the light reading go lower than 100 in anything brighter than a very dark room. There are hardware tweaks that can be done which will reduce the sensitivity, but they probably aren't relevant to this project. Just know that seeing it always read 100 in a lit room is normal. Turn off ever light and take it away from your computer's monitor to get a better result.
 Also, this code does leave the backlight on at all times. There is a gap under the screen, next to the light sensor, which can spill light out from the screen to the sensor. I added some tape to block the light spill. I highly recommend doing this. Perhaps a future improvement could be to turn off the backlight when "running" and turn it back on when the user touches the scren.
+![Tape should be placed beside the light sensor](images/sensorLightBlock.jpg)
 
 Caveat: I haven't tested this with real lightning. I live on the west coast and we don't get much lightning, but I just liked the idea of it, so it became my "Learn how to program the 2432S024R project". This is much more of a hardware test than a real project meant to be useful. If you find it useful, that's great!
 
 ## Setup
 
 In the setup() function, you'll want to change the camera name to match the name of the camera you're trying to connect with:
+
 `    sonyBluetoothRemote.pairWith("ILCE-7CM2");`
 
 Ideally there'd be a whole pairing UI to be able to choose this from the discovered Bluetooth devices. That's potential future work.

@@ -20,7 +20,7 @@
 #define LCDtypeR
 #endif
 
-#define TEST_UI_ONLY // Define to test UI only without camera connected
+// #define TEST_UI_ONLY // Define to test UI only without camera connected
 
 // Needed standard libraries
 #include <Adafruit_GFX.h>
